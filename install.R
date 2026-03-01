@@ -1,6 +1,5 @@
 # install.R
-# Script to install all required dependencies for MolNetConsensus
-
+# Script to install all required dependencies for MolNetEnhancer-CANOPUS
 required_packages <- c("shiny", "igraph", "dplyr", "httr", "jsonlite", "DT")
 
 # Identify packages that are not yet installed
