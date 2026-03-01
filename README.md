@@ -1,0 +1,2 @@
+# MolNetEnhancer-CANOPUS
+A modernized, R-based implementation of the MolNetEnhancer workflow, optimized for GNPS2 GraphML outputs and untargeted metabolomics. This Shiny application bypasses traditional annotation bottlenecks by propagating deep-learning-based CANOPUS (SIRIUS) classifications across molecular networks. It features a novel consensus algorithm that prioritizes empirical library SMILES via NPClassifier API hotspots, offering customizable tie-breaker logic for uncharacterized molecular families.
