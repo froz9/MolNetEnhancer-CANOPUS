@@ -8,6 +8,9 @@ library(DT)
 # --- 1. Helper Functions ---
 
 query_npclassifier <- function(smiles_string) {
+  # Add a tiny delay to prevent API rate limiting (throttling)
+  Sys.sleep(0.1) 
+  
   safe_smiles <- URLencode(smiles_string, reserved = TRUE)
   url <- paste0("https://npclassifier.gnps2.org/classify?smiles=", safe_smiles)
   
@@ -143,13 +146,21 @@ server <- function(input, output, session) {
       }
       
       # --- Step 2: Query Hotspots ---
-      incProgress(0.3, detail = "Querying Hotspots...")
+      incProgress(0.1, detail = "Preparing Hotspot Queries...")
       if("library_SMILES" %in% colnames(net_df)) {
         unique_smiles <- unique(na.omit(net_df$library_SMILES[net_df$library_SMILES != ""]))
         v$logs <- paste0(v$logs, "Found ", length(unique_smiles), " unique library SMILES.\n")
         
         if (length(unique_smiles) > 0) {
-          api_results <- lapply(unique_smiles, query_npclassifier)
+          api_results <- list()
+          n_smiles <- length(unique_smiles)
+          
+          # Use a for loop to incrementally update the progress bar for the user
+          for(i in seq_along(unique_smiles)) {
+            incProgress(0.2 / n_smiles, detail = paste("Querying API:", i, "of", n_smiles))
+            api_results[[i]] <- query_npclassifier(unique_smiles[i])
+          }
+          
           api_df <- bind_rows(api_results)
           net_df <- left_join(net_df, api_df, by = c("library_SMILES" = "SMILES"))
         } else {
