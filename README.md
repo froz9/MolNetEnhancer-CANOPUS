@@ -12,6 +12,9 @@ This tool bypasses traditional annotation bottlenecks in untargeted metabolomics
 * **Custom Tie-Breaker Logic:** Resolves classification conflicts in small molecular families (e.g., 2-node networks) by allowing users to choose between a "Classic" structural default or an "Ambiguous/Concatenated" output.
 * **Clean Exports:** Generates a lightweight summary `.csv` and injects the new consensus classifications directly into a downloadable, publication-ready `.graphml` file.
 
+## Try it here:
+
+https://5bptzm-alan-hernandez.shinyapps.io/MolNetEnhancer-CANOPUS/
 ---
 
 ## 🛠️ Prerequisites & Installation
@@ -20,6 +23,7 @@ This application requires **R** and the **Shiny** web framework.
 
 To easily install all required dependencies, you can run the included `install.R` script, or execute the following in your R console:
 
+<<<<<<< HEAD
 install.packages(c("shiny", "igraph", "dplyr", "httr", "jsonlite", "DT"))
 
 
@@ -28,3 +32,7 @@ install.packages(c("shiny", "igraph", "dplyr", "httr", "jsonlite", "DT"))
 1. Clone this repository to your local machine.
 2. Open `app.R` in RStudio.
 3. Click **Run App** in the top right corner, or run `shiny::runApp()` in your console.
+=======
+```R
+install.packages(c("shiny", "igraph", "dplyr", "httr", "jsonlite", "DT"))
+>>>>>>> aa41294b557db7c94ce78b768e2b27d8e10b5b27
