@@ -79,8 +79,12 @@ calculate_consensus <- function(df, class_col, hotspot_col, tie_breaker_method) 
 
 # --- 2. UI Definition ---
 ui <- fluidPage(
-  titlePanel("MolNetEnhancer: GNPS2 & CANOPUS Integration"),
-  sidebarLayout(
+  titlePanel(
+    div("MolNetEnhancer: GNPS2 & CANOPUS Integration",
+        img(src = "logo_L125.png", style = "float:left; height: 65px; margin-top: -10px;")
+    )
+  ),
+sidebarLayout(
     sidebarPanel(
       fileInput("graphml_file", "1. Upload GNPS2 GraphML File", accept = c(".graphml")),
       fileInput("canopus_file", "2. Upload CANOPUS Summary (.tsv)", accept = c(".tsv", ".csv", ".txt")),
