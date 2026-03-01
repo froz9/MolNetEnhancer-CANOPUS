@@ -5,6 +5,8 @@ library(httr)
 library(jsonlite)
 library(DT)
 
+options(shiny.maxRequestSize = 30 * 1024^2)
+
 # --- 1. Helper Functions ---
 
 query_npclassifier <- function(smiles_string) {
