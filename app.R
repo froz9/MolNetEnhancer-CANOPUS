@@ -81,7 +81,7 @@ calculate_consensus <- function(df, class_col, hotspot_col, tie_breaker_method) 
 ui <- fluidPage(
   titlePanel(
     div("MolNetEnhancer: GNPS2 & CANOPUS Integration",
-        img(src = "logo_L125.png", style = "float:left; height: 65px; margin-top: -10px;")
+        img(src = "logo_L125.png", style = "float:right; height: 100px; margin-top: -10px;")
     )
   ),
 sidebarLayout(
@@ -104,8 +104,14 @@ sidebarLayout(
       h4("Consensus Preview"),
       DTOutput("results_table")
     )
-  )
-)
+  ),
+# Global Footer
+hr(style="margin-top: 40px;"),
+div(style = "text-align: center; color: gray;",
+    p("MolNetEnhancer: GNPS2 & CANOPUS Integration"),
+    p("This work was supported by Universidad Nacional Autónoma de México Postdoctoral Program"),
+    a(href = "mailto:f9.alan@gmail.com", "Report a bug")
+))
 
 # --- 3. Server Logic ---
 server <- function(input, output, session) {
