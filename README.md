@@ -21,3 +21,10 @@ This application requires **R** and the **Shiny** web framework.
 To easily install all required dependencies, you can run the included `install.R` script, or execute the following in your R console:
 
 install.packages(c("shiny", "igraph", "dplyr", "httr", "jsonlite", "DT"))
+
+
+---
+### Running Locally
+1. Clone this repository to your local machine.
+2. Open `app.R` in RStudio.
+3. Click **Run App** in the top right corner, or run `shiny::runApp()` in your console.
