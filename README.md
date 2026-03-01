@@ -20,5 +20,4 @@ This application requires **R** and the **Shiny** web framework.
 
 To easily install all required dependencies, you can run the included `install.R` script, or execute the following in your R console:
 
-```R
 install.packages(c("shiny", "igraph", "dplyr", "httr", "jsonlite", "DT"))
