@@ -12,6 +12,9 @@ This tool bypasses traditional annotation bottlenecks in untargeted metabolomics
 * **Custom Tie-Breaker Logic:** Resolves classification conflicts in small molecular families (e.g., 2-node networks) by allowing users to choose between a "Classic" structural default or an "Ambiguous/Concatenated" output.
 * **Clean Exports:** Generates a lightweight summary `.csv` and injects the new consensus classifications directly into a downloadable, publication-ready `.graphml` file.
 
+## Try it here:
+
+https://5bptzm-alan-hernandez.shinyapps.io/MolNetEnhancer-CANOPUS/
 ---
 
 ## 🛠️ Prerequisites & Installation
